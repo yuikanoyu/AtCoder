@@ -8,7 +8,6 @@ def digit_sum(num):
 def digit_sum2(num):
     total = 0
     for digit in str(num):
-        print('num:{},digit:{}'.format(num,digit))
         total += int(digit)
     return total
 
