@@ -1,15 +1,25 @@
-rain_list = []
+input_rain_list = []
 N = int(input())
 for i in range(N):
-    rain_list.append(list(map(str,input().split('-'))))
+    input_rain_list.append(list(map(str,input().split('-'))))
 
 for i in range(N):
     for j in range(2):
-        fix_value = int(rain_list[i][j][2:]) % 5
+        fix_value = int(input_rain_list[i][j][2:]) % 5
         if j == 1 and fix_value != 0:
             fix_value = -(5 - fix_value)
-        rain_list[i][j] = int(rain_list[i][j]) - fix_value
+        input_rain_list[i][j] = int(input_rain_list[i][j]) - fix_value
+rain_list = sorted(input_rain_list)
 
-print(rain_list)
+i = 0
+while i < len(rain_list)-1:
+    print('i:{}, len:{}'.format(i,len(rain_list)))
+    if rain_list[i][0] <= rain_list[i+1][0] and rain_list[i+1][0] <= rain_list[i][1]:
+        if rain_list[i][1] < rain_list[i+1][1]:
+            rain_list[i][1] = rain_list[i+1][1]
+        rain_list.pop(i+1)
+    else:
+        i += 1
 
-
+for rain in rain_list:
+    print('{}-{}'.format(rain[0],rain[1]))
