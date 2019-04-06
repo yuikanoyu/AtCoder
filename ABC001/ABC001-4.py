@@ -23,4 +23,4 @@ while i < len(rain_list)-1:
         i += 1
 
 for rain in rain_list:
-    print('{}-{}'.format(rain[0],rain[1]))
+    print('{0:04}-{1:04}'.format(rain[0],rain[1]))
