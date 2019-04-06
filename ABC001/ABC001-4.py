@@ -9,11 +9,12 @@ for i in range(N):
         if j == 1 and fix_value != 0:
             fix_value = -(5 - fix_value)
         input_rain_list[i][j] = int(input_rain_list[i][j]) - fix_value
+        if str(input_rain_list[i][j])[2:] == '60':
+            input_rain_list[i][j] += 40 
 rain_list = sorted(input_rain_list)
 
 i = 0
 while i < len(rain_list)-1:
-    print('i:{}, len:{}'.format(i,len(rain_list)))
     if rain_list[i][0] <= rain_list[i+1][0] and rain_list[i+1][0] <= rain_list[i][1]:
         if rain_list[i][1] < rain_list[i+1][1]:
             rain_list[i][1] = rain_list[i+1][1]
