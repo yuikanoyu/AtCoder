@@ -1,24 +1,11 @@
-def trans(i):
-	if nums[i] <= 0:
-		return
-	val = nums[i] - caps[i]
-	if val <= 0:
-		nums[i+1] += nums[i] 
-		nums[i] = 0
-	else:
-		nums[i+1] += caps[i] 
-		nums[i] -= caps[i]
+import math
 
-time = 0
-nums = [0]*6
-N = nums[0] = int(input())
-caps = []
-for i in range(5):
-	caps.append(int(input()))
-print('{}-{}'.format(nums,caps))
+n = int(input())
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
 
-while nums[5] != N:
-	time += 1
-	for i in range(4,-1,-1):
-		trans(i)
-	print('num:{}-time:{}'.format(nums,time))
+count = math.ceil(n/min(a,b,c,d,e))
+print(count+len('ABCDE')-1)
