@@ -12,3 +12,6 @@ else:
     pass
 
 print(output)
+
+# one line
+# print("TGCA"["ACGT".find(input())])
