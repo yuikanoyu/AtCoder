@@ -1,4 +1,11 @@
 def GCD(a, b):
+    if a == 0 and b == 0:
+        return 0
+    elif a == 0:
+        return b
+    elif b == 0:
+        return a
+
     while a % b != 0:
         r = a % b
         a, b = b, r
@@ -8,17 +15,15 @@ ans = 0
 N = int(input())
 A = tuple(map(int,input().split()))
 
-A2 = tuple(set(A))
+X = [0]*N
+Y = [0]*N
 
-if len(A2) <= 2:
-    A2 = (A2[0],A2[0])
+for i in range(1,N):
+    X[i] = GCD(X[i-1],A[i-1])
+for i in range(N-1)[::-1]:
+    Y[i] = GCD(Y[i+1],A[i+1])
 
-for S in range(len(A2)):
-    Af = 0
-    for i in range(len(A2)):
-        if S != i:
-            Af = GCD(Af,A[i])
-    ans = max(ans,Af)
+for i in range(N):
+    ans = max(ans,GCD(X[i],Y[i]))
 
 print(ans)
-print(A2)
