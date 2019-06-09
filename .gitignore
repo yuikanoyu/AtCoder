@@ -1,1 +1,10 @@
 Sandbox.py
+
+# visual studio
+Atcoder_VS/.vs
+Atcoder_VS/bin
+Atcoder_VS/obj
+Atcoder_VS/properties
+*.csproj
+*.user
+*.sln
