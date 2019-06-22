@@ -1,21 +1,24 @@
 N, K = map(int,input().split())
 a = list(map(int,input().split()))
 
-x = 0
-cnt = 0
+total = 0
+ans = 0
+r = 0
 
-for i in range(N):
-    x = a[i]
+for l in range(N):
+    while total < K:
 
-    if x >= K:
-        cnt += N-i
-        continue
-
-    for j in range(N-i-1):
-        x += a[1+i+j]
-        if x >= K:
-            cnt += N-(1+i+j)
+        if r >= N:
             break
 
-    
-print(cnt)
+        else:
+            total += a[r]
+            r += 1
+
+    if total < K:
+        break
+
+    ans += N-r+1
+    total -= a[l]
+
+print(ans)
