@@ -1,10 +1,10 @@
 Sandbox.py
 
 # visual studio
-Atcoder_VS/.vs
-Atcoder_VS/bin
-Atcoder_VS/obj
-Atcoder_VS/properties
+AtcoderVS/.vs
+AtcoderVS/bin
+AtcoderVS/obj
+AtcoderVS/properties
 *.csproj
 *.user
 *.sln
