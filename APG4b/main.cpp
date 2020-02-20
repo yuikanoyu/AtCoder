@@ -1,6 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+int main(){
+    
+}
 
+#if EX5
+int main(){
+    int A, B;
+    cin >> A >> B;
+    cout << A + B << endl;
+}
+#endif
+#if EX4
 int main(){
     // 一年の秒数
     int seconds = 365 * 24 * 60 * 60;
@@ -11,6 +22,7 @@ int main(){
     cout << 5 * seconds << endl;
     cout << 10 * seconds << endl;
 }
+#endif
 #if EX3
 int main(){
     cout << 100*(100+1)/2 << endl;
