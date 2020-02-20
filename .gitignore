@@ -11,3 +11,6 @@ AtcoderVS/properties
 
 
 .idea
+
+# CLion
+cmake-build-debug
