@@ -1,6 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
+#if EX9
+int main(){
+    int x, a, b;
+    cin >> x >> a >> b;
 
+    // 1.の出力
+    x++;
+    cout << x << endl;
+
+    // ここにプログラムを追記
+    // 2
+    x *= (a + b);
+    cout << x << endl;
+    // 3
+    x *= x;
+    cout << x << endl;
+    // 4
+    x--;
+    cout << x << endl;
+}
+#endif
+#if EX8
 int main() {
     int p;
     int price;
@@ -23,6 +44,7 @@ int main() {
 
     cout << price * N << endl;
 }
+#endif
 #if EX7
 int main() {
     // 変数a,b,cにtrueまたはfalseを代入してAtCoderと出力されるようにする。
