@@ -1,5 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
+int main(){
+    int A, B;
+    cin >> A >> B;
+
+    // ここにプログラムを追記
+    int i;
+    i = A;
+    cout << "A:";
+    while(i > 0){
+        cout << "]";
+        i--;
+    }
+    cout << endl;
+    i = B;
+    cout << "B:";
+    while(i > 0){
+        cout << "]";
+        i--;
+    }
+    cout << endl;
+}
 #if EX9
 int main(){
     int x, a, b;
