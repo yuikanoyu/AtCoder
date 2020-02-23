@@ -1,5 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+int main() {
+    int N, A;
+    cin >> N >> A;
+    for(int i = 1 ; i <= N; i++){
+        string op;
+        int B;
+        cin >> op >> B;
+        if( op == "+"){
+            cout << i << ":";
+            A += B;
+            cout << A << endl;
+        }else if(op == "-"){
+            cout << i << ":";
+            A -= B;
+            cout << A << endl;
+        }else if(op == "*"){
+            cout << i << ":";
+            A *= B;
+            cout << A << endl;
+        }else if(op == "/"){
+            if(B != 0){
+                cout << i << ":";
+                A /= B;
+                cout << A << endl;
+            }else{
+                cout << "error" << endl;
+                break;
+            }
+        }else{
+            cout << "error" << endl;
+            break;
+        }
+    }
+}
+#if EX10
 int main(){
     int A, B;
     cin >> A >> B;
@@ -7,6 +43,7 @@ int main(){
     // ここにプログラムを追記
     int i;
     i = A;
+
     cout << "A:";
     while(i > 0){
         cout << "]";
@@ -21,6 +58,7 @@ int main(){
     }
     cout << endl;
 }
+#endif
 #if EX9
 int main(){
     int x, a, b;
