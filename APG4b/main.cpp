@@ -1,6 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define EX12 1
+#if EX12
+int main() {
+    string S;
+    cin >> S;
 
+    // ここにプログラムを追記
+    int length = S.size();
+    int ans = 1;
+    for(int i = 0; i< length;i++){
+        switch(S.at(i)){
+            case '+':
+                ans++;
+                break;
+            case '-':
+                ans--;
+                break;
+            default:
+                break;
+        }
+    }
+    cout << ans << endl;
+}
+#endif
+#if EX11
 int main() {
     int N, A;
     cin >> N >> A;
@@ -35,6 +59,7 @@ int main() {
         }
     }
 }
+#endif
 #if EX10
 int main(){
     int A, B;
