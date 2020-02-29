@@ -1,6 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define EX12 1
+#define EX13 1
+#if EX13
+int main(){
+    int N;
+    cin >> N;
+    vector<int> A(N);
+    int S = 0;
+    int AV = 0;
+    for(int i = 0; i<N; i++){
+        cin >> A.at(i);
+        S += A.at(i);
+    }
+    AV = S / N;
+    for(int i = 0; i<N; i++){
+        cout << abs( AV - A.at(i)) << endl;
+    }
+}
+#endif
 #if EX12
 int main() {
     string S;
