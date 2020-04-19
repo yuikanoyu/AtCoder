@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define EX13 1
+#define EX14 1
+#if EX14
+int main(){
+    int A, B, C;
+    cin >> A >> B >> C;
+    vector<int> vec = {A,B,C};
+    sort(vec.begin(),vec.end());
+    cout << vec.at(2) - vec.at(0) << endl;
+}
+#endif
 #if EX13
 int main(){
     int N;
