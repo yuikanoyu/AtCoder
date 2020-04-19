@@ -1,12 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define EX12 1
+#define EX13 1
+#if EX13
+int main(){
+    int N;
+    cin >> N;
+    vector<int> A(N);
+    // a b c d e ... って空白区切りも取得できる
+    for(int i = 0 ; i < N ; i++){
+        cin >> A.at(i);
+    }
+
+    // 平均点の算出 (0は初期値)
+    float ave = accumulate(A.begin(), A.end(),0) / N;
+
+    // 離れている値の出力
+    for(int i = 0 ; i < N ; i++ ){
+        cout << abs(ave - A.at(i)) << endl;
+    }
+}
+#endif
 #if EX12
 int main() {
     string S;
     cin >> S;
-
-    // ここにプログラムを追記
     int length = S.size();
     int ans = 1;
     for(int i = 0; i< length;i++){
