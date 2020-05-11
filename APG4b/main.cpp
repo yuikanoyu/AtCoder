@@ -11,13 +11,16 @@ using namespace std;
 #define iceil(a,b) (a+(b-1))/b //int ceil : 繰り上げの割り算 通常のceilではceil((7.0/2.0))のようにしなければならなかった。
 vint CinLine(int N){vint v(N);for(int i=0;i<N;i++){cin >> v.at(i);}return v;}//cin line 連続でvectorに格納
 void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << v.at(v.size()-1)<<endl;}
+// str.substr(開始位置, 取り出す長さ);
 
 int main() {
-    int a ,b;
-    cin >> a >> b;
-    if((a*b)%2 != 0){
-        ct("Odd");
-    }else{
-        ct("Even");
+    int ans = 0;
+    string s;
+    cin >> s;
+    rep(i,s.size()) {
+        if (s.substr(i, 1) == "1"){
+            ans++;
+        }
     }
+    ct(ans);
 }
