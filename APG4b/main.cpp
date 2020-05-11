@@ -13,8 +13,11 @@ vint CinLine(int N){vint v(N);for(int i=0;i<N;i++){cin >> v.at(i);}return v;}//c
 void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << v.at(v.size()-1)<<endl;}
 
 int main() {
-    int a,b,c;
-    string s;
-    cin >> a >> b >> c >> s;
-    cout << a+b+c << " " << s << endl;
+    int a ,b;
+    cin >> a >> b;
+    if((a*b)%2 != 0){
+        ct("Odd");
+    }else{
+        ct("Even");
+    }
 }
