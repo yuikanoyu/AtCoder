@@ -16,17 +16,15 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 int main() {
     int n;
     cin >> n;
-    int fieldID = -1;
+    vint fieldIDs;
     vint a = CinLine(n);
-    for(int i : a){
-        if(i == 0){
-            fieldID = i;
-            break;
+    rep(i,n){
+        if(a[i] == 0){
+            fieldIDs.push_back(i);
         }
     }
-    if(fieldID != -1){
-        ct("Yes");
-    }else{
-        ct("No");
+
+    for(auto id : fieldIDs){
+        ct(id);
     }
 }
