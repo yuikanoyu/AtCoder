@@ -16,15 +16,10 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 int main() {
     int n;
     cin >> n;
-    vint fieldIDs;
     vint a = CinLine(n);
+    int ans = INT_MAX;
     rep(i,n){
-        if(a[i] == 0){
-            fieldIDs.push_back(i);
-        }
+        ans = min(ans,a[i]);
     }
-
-    for(auto id : fieldIDs){
-        ct(id);
-    }
+    ct(ans);
 }
