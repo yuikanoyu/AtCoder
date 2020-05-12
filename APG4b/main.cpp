@@ -13,34 +13,20 @@ vint CinLine(int N){vint v(N);for(int i=0;i<N;i++){cin >> v.at(i);}return v;}//c
 void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << v.at(v.size()-1)<<endl;}
 // str.substr(開始位置, 取り出す長さ);
 
-bool IsOdd(int x) {
-    if (x % 2 == 1) {
-        return 1;
-    }else{
-        return 0;
-    }
-}
-
 int main() {
     int n;
-    int c = 0;
     cin >> n;
+    bool existZero = false;
     vint a = CinLine(n);
-    while(true){
-        bool f = true;
-        rep(i,n){
-            if(IsOdd(a[i])){
-                f = false;
-                break;
-            }else{
-                a[i] /= 2;
-            }
-        }
-        if(f){
-            c++;
-        }else{
+    for(int i : a){
+        if(i == 0){
+            existZero = true;
             break;
         }
     }
-    ct(c);
+    if(existZero){
+        ct("Yes");
+    }else{
+        ct("No");
+    }
 }
