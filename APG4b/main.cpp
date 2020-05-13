@@ -17,9 +17,13 @@ int main() {
     int n;
     cin >> n;
     vint a = CinLine(n);
-    int ans = INT_MAX;
+    int ans = -INFINITY;
     rep(i,n){
-        ans = min(ans,a[i]);
+        ans = max(ans,a[i]);
     }
     ct(ans);
+    int p = INFINITY;
+    int m = -INFINITY;
+    ct(p);
+    ct(m);
 }
