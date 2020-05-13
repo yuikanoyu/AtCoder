@@ -17,13 +17,14 @@ int main() {
     int n;
     cin >> n;
     vint a = CinLine(n);
-    int ans = -INFINITY;
+    int minCount = INT_MAX;
     rep(i,n){
-        ans = max(ans,a[i]);
+        int c = 0;
+        while(a[i]%2 == 0){
+            a[i] /= 2;
+            c++;
+        }
+        minCount = min(minCount , c);
     }
-    ct(ans);
-    int p = INFINITY;
-    int m = -INFINITY;
-    ct(p);
-    ct(m);
+    ct(minCount);
 }
