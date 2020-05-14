@@ -15,16 +15,20 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 
 int main() {
     int ans = 0;
-    int A,B,C,X;
-    cin >> A >> B >> C >> X;
-    rep(a,A+1){
-        rep(b,B+1){
-            rep(c,C+1){
-                int total = a*500+b*100+c*50;
-                if(total == X){
-                    ans++;
-                }
+    int N,A,B;
+    cin >> N >> A >> B;
+    for(int i = 1; i<= N ; i++){
+        int n = i;
+        int total = 0;
+        while(true) {
+            total += (n % 10);
+            n = n/10;
+            if(n == 0){
+                break;
             }
+        }
+        if(A <= total && total <= B){
+            ans += i;
         }
     }
     ct(ans);
