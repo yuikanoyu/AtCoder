@@ -14,22 +14,20 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
-    int ans = 0;
-    int N,A,B;
-    cin >> N >> A >> B;
-    for(int i = 1; i<= N ; i++){
-        int n = i;
-        int total = 0;
-        while(true) {
-            total += (n % 10);
-            n = n/10;
-            if(n == 0){
-                break;
-            }
-        }
-        if(A <= total && total <= B){
-            ans += i;
+    int N;
+    cin >> N;
+    vint a = CinLine(N);
+    int Alice = 0, Bob= 0;
+    bool isAlice = true;
+    sort(all(a),greater<int>());
+    rep(i,a.size()){
+        if(isAlice) {
+            isAlice = false;
+            Alice += a[i];
+        }else {
+            isAlice = true;
+            Bob += a[i];
         }
     }
-    ct(ans);
+    ct(Alice-Bob);
 }
