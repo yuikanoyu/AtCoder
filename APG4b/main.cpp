@@ -14,17 +14,18 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
-    int n;
-    cin >> n;
-    vint a = CinLine(n);
-    int minCount = INT_MAX;
-    rep(i,n){
-        int c = 0;
-        while(a[i]%2 == 0){
-            a[i] /= 2;
-            c++;
+    int ans = 0;
+    int A,B,C,X;
+    cin >> A >> B >> C >> X;
+    rep(a,A+1){
+        rep(b,B+1){
+            rep(c,C+1){
+                int total = a*500+b*100+c*50;
+                if(total == X){
+                    ans++;
+                }
+            }
         }
-        minCount = min(minCount , c);
     }
-    ct(minCount);
+    ct(ans);
 }
