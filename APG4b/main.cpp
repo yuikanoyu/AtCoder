@@ -16,18 +16,10 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 int main() {
     int N;
     cin >> N;
-    vint a = CinLine(N);
-    int Alice = 0, Bob= 0;
-    bool isAlice = true;
-    sort(all(a),greater<int>());
-    rep(i,a.size()){
-        if(isAlice) {
-            isAlice = false;
-            Alice += a[i];
-        }else {
-            isAlice = true;
-            Bob += a[i];
-        }
+    vint d = CinLine(N);
+    set<int> values; // insertするときに重複を取り除いてくれる
+    for(auto i : d){
+        values.insert(i);
     }
-    ct(Alice-Bob);
+    ct(values.size());
 }
