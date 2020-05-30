@@ -14,12 +14,4 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
-    int N;
-    cin >> N;
-    vint d = CinLine(N);
-    set<int> values; // insertするときに重複を取り除いてくれる
-    for(auto i : d){
-        values.insert(i);
-    }
-    ct(values.size());
 }
