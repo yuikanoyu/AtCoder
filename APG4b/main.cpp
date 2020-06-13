@@ -14,4 +14,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
+    int n,y;
+    cin >> n >> y;
+    ct(n);
 }
