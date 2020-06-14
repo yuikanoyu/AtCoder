@@ -13,22 +13,36 @@ vint CinLine(int N){vint v(N);for(int i=0;i<N;i++){cin >> v.at(i);}return v;}//c
 void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << v.at(v.size()-1)<<endl;}
 // str.substr(開始位置, 取り出す長さ);
 
+int vector_finder(std::vector<int> vec, int number) {
+    auto itr = std::find(vec.begin(), vec.end(), number);
+    size_t index = std::distance( vec.begin(), itr );
+    if (index != vec.size()) { // 発見できたとき
+        return 1;
+    }
+    else { // 発見できなかったとき
+        return 0;
+    }
+}
+
 int main() {
-    int x,y;
-    bool isOK = false;
-    cin >> x >> y;
-    for(int t = 0 ; t <= x ; t++){
-        for(int k = (x-t) ; k+t <= x ; k++) {
-            //cout << t << " " << k << endl;
-            if((t*2 + k*4 == y) || (t*4 + k*2 == y)){
-                isOK = true;
-                break;
-            }
-        }
-        if(isOK){
+    int x,n;
+    cin >> x >> n;
+    vint p(n);
+    p = CinLine(n);
+    int ans = x;
+    int i = 0;
+    bool isPlus = true;
+    while(true){
+        if(isPlus) ans += i;
+        else  ans -= i;
+        //ct(ans);
+        if(vector_finder(p,ans) == 0){
             break;
         }
+        i++;
+        if(isPlus) isPlus = false;
+        else isPlus = true;
     }
-    if(isOK) ct("Yes");
-    else ct("No");
+    ct(ans);
+
 }
