@@ -14,5 +14,14 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
+    vint x(5);
+    x = CinLine(5);
+    int i;
+    for(i = 0 ;i < 5; i++){
+        if(x[i] == 0) {
+            break;
+        }
+    }
+    ct(i+1);
 
 }
