@@ -14,22 +14,5 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 int main() {
-    int N,M;
-    cin >> N >> M;
-    vint C(N);
-    rep(i,N){
-        cin >> C[i];
-    }
-    bool isLuckey = false;
-    int i;
-    set<int> cards;
-    for(i = 0 ; i < C.size() ; i++){
-        cards.insert(C[i]);
-        if(cards.size() >= M){
-            isLuckey = true;
-            break;
-        }
-    }
-    if(isLuckey) ct(i+1);
-    else ct("unlucky");
+
 }
