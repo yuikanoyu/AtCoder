@@ -18,18 +18,11 @@ void Main(){
     ul n;
     cin >> n;
 
-    set<ul> seta;
-    for(ul i = 0;i<n;i++){
-        ul x;
-        cin >> x;
-        seta.insert(x);
+    vector<ul> a(n);
+    for(ul i = 0; i<n; i++){
+        cin >> a[i];
     }
-    vector<ul> a(seta.begin(), seta.end());
-
-    if(a.size() == 1){
-        ct(0);
-        return;
-    }
+    sort(a.rbegin(),a.rend());
 
     vector<bool> isOK(n);
     for(ul i = 0;i<n;i++){
@@ -39,13 +32,21 @@ void Main(){
     for(ul i = 0 ; i < a.size() ; i++){
         for(ul j = 0 ; j < a.size() ; j++){
             if(i==j){
-                break;
+                continue;
             }
             if(isOK[i]){//脱落していなければ
                 if(a[i] % a[j] == 0){
                     //cout << a[i] << " " << a[j] << " " << a[i]%a[j]<< endl;
                     // 割り切れた
                     isOK[i] = false;
+                    while(i+1 < a.size()){
+                        if(a[i]==a[i+1]){
+                            i++;
+                            isOK[i] = false;
+                        }else{
+                            break;
+                        }
+                    }
                     break;
                 }
             }
@@ -59,6 +60,10 @@ void Main(){
     }
 
     ct(ans);
+
+    for(ul i = 0;i<n;i++){
+        //cout << isOK[i] << " ";
+    }
 }
 
 int main() {
