@@ -15,55 +15,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-    ul n;
-    cin >> n;
 
-    vector<ul> a(n);
-    for(ul i = 0; i<n; i++){
-        cin >> a[i];
-    }
-    sort(a.rbegin(),a.rend());
-
-    vector<bool> isOK(n);
-    for(ul i = 0;i<n;i++){
-        isOK[i] = true;
-    }
-
-    for(ul i = 0 ; i < a.size() ; i++){
-        for(ul j = 0 ; j < a.size() ; j++){
-            if(i==j){
-                continue;
-            }
-            if(isOK[i]){//脱落していなければ
-                if(a[i] % a[j] == 0){
-                    //cout << a[i] << " " << a[j] << " " << a[i]%a[j]<< endl;
-                    // 割り切れた
-                    isOK[i] = false;
-                    while(i+1 < a.size()){
-                        if(a[i]==a[i+1]){
-                            i++;
-                            isOK[i] = false;
-                        }else{
-                            break;
-                        }
-                    }
-                    break;
-                }
-            }
-        }
-    }
-    ul ans = 0;
-    for(auto x : isOK){
-        if(x == true){
-            ans++;
-        }
-    }
-
-    ct(ans);
-
-    for(ul i = 0;i<n;i++){
-        //cout << isOK[i] << " ";
-    }
 }
 
 int main() {
