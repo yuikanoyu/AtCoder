@@ -15,41 +15,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-    int L;
-    int u,a,b;
-    int v;
-    cin >> L;
-    cin >> u >> a >> b;
-    cin >> v;
 
-    int vt = L * v;
-
-    int ut = 0;
-    int ul = 0;
-    int dis = 0;
-    while(true){
-
-        ul++;
-        ut += u;
-
-        if(ul >= L){
-            break;
-        }
-
-        dis++;
-        if(dis >= a){
-            dis = 0;
-            ut+= b;
-        }
-    }
-    //cout << vt << " " << ut << endl ;
-    if(ut < vt){
-        ct("USAGI");
-    }else if(vt < ut){
-        ct("KAME");
-    }else{
-        ct("DRAW");
-    }
 }
 
 int main() {
