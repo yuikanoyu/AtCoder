@@ -15,24 +15,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-    int n,k,p;
-    cin >> n >> k >> p;
-    vector<string> s(n);
-    for(int i = 0 ; i < n ; i++){
-        cin >> s[i];
-    }
-    sort(all(s));
 
-    int st = (k*p)-(k-1)-1;
-    int ed = st + k;
-    //t(ed);
-    //ct(s.size()-1);
-    if(s.size()-1 < ed){
-        ed = s.size();
-    }
-    for(int i = st; i<ed; i++ ){
-        ct(s[i]);
-    }
 }
 
 int main() {
