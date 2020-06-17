@@ -15,7 +15,23 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-
+    string n;
+    int m;
+    cin >> n >> m;
+    vector<string> r(m);
+    rep(i,m){
+        cin >> r[i];
+    }
+    bool isNone = true;
+    rep(i,m){
+        if(r[i].find(n) == -1){
+            isNone = false;
+            ct(r[i]);
+        }
+    }
+    if(isNone){
+        ct("none");
+    }
 }
 
 int main() {
