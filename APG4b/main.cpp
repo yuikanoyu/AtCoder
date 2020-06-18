@@ -15,7 +15,32 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
+    int n;
+    cin >> n;
+    int pt = 0;
+    rep(i,n){
+        int d,p;
+        cin >> d >> p;
 
+        switch(d){
+            case 3:
+            case 13:
+            case 23:
+            case 30:
+            case 31:
+                pt += p * 0.03f;
+                break;
+            case 5:
+            case 15:
+            case 25:
+                pt += p * 0.05f;
+                break;
+            default:
+                pt += p * 0.01f;
+                break;
+        }
+    }
+    ct(pt);
 }
 
 int main() {
