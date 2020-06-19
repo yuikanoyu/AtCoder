@@ -15,7 +15,9 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-
+    string E;
+    cin >> E;
+    ct(count(E.begin(),E.end(),'/') + count(E.begin(),E.end(),'<')*10);
 }
 
 int main() {
