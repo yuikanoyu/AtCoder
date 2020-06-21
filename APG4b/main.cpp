@@ -15,6 +15,14 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
+    char a;
+    cin >> a;
+    if('a' <= a && a <= 'z')
+    {
+        ct('a');
+    }else{
+        ct('A');
+    }
 
 }
 
