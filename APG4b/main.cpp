@@ -15,24 +15,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-    int t;
-    cin >> t;
-    int meloning = 0;
-    int melonCnt = 0;
-    rep(i,t){
-        string n;
-        cin >> n;
-        if(meloning == 0) {
-            //ct(n);
-            if (n == "melon") {
-                meloning = 10;
-                melonCnt++;
-            }
-        }else{
-            meloning--;
-        }
-    }
-    ct(melonCnt);
+
 }
 
 int main() {
