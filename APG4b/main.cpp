@@ -18,28 +18,17 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 void Main(){
     ul n;
     cin >> n;
-    //n -= 1;
     string sna = "";
 
     int base  = 26;
     do {
         char c;
-            //c = fmod(n, base);
+            n -= 1;
             c = n % base;
             n /= base;
-            char c2 = (c + 0x60);
-            if('a' <= c2 && c2 <= 'y'){
-                sna += c2;
-            }else {
-                sna += 'z';
-                //n = 0;
-                if(n < base){
-                    //break;
-                }
-            }
+            char c2 = (c + 0x61);
+            sna += c2;
 
-
-            //ct(sna);
 
     }while(n != 0);
 
