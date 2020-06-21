@@ -15,15 +15,18 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 // str.substr(開始位置, 取り出す長さ);
 
 void Main(){
-    char a;
-    cin >> a;
-    if('a' <= a && a <= 'z')
-    {
-        ct('a');
-    }else{
-        ct('A');
+    int n,k;
+    cin >> n >> k;
+    vint p(n);
+    for(int i = 0; i < n; i++){
+        cin >> p[i];
     }
-
+    sort(all(p));
+    int ans = 0;
+    for(int i = 0; i < k; i++){
+        ans += p[i];
+    }
+    ct(ans);
 }
 
 int main() {
