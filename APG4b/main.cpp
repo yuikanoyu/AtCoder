@@ -16,24 +16,7 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 
 
 void Main(){
-    ul n;
-    cin >> n;
-    string sna = "";
 
-    int base  = 26;
-    do {
-        char c;
-            n -= 1;
-            c = n % base;
-            n /= base;
-            char c2 = (c + 0x61);
-            sna += c2;
-
-
-    }while(n != 0);
-
-    reverse(all(sna));
-    ct(sna);
 }
 
 int main() {
