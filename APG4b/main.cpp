@@ -16,7 +16,9 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 
 
 void Main(){
-
+    int m,p,q;
+    cin >> m >> p >> q;
+    ct(((m * (100-p)*0.01f) * (100-q)*0.01f));
 }
 
 int main() {
