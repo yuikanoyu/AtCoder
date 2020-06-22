@@ -18,7 +18,13 @@ void CoutLine(vint v){for(int i=0;i<v.size()-1;i++){cout<<v.at(i)<<" ";}cout << 
 void Main(){
     int m,p,q;
     cin >> m >> p >> q;
-    ct(((m * (100-p)*0.01f) * (100-q)*0.01f));
+    double _dp,_dq;
+    _dp = (100-p)*0.01f;
+    _dq = (100-q)*0.01f;
+
+
+    ct(m * _dp * _dq);
+    cout << fixed << setprecision(5) << (m* _dp*_dq) << endl;
 }
 
 int main() {
